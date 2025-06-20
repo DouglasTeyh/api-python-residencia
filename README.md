@@ -2,7 +2,7 @@
 
 ## 🗂️ Organização:
 ```bash
-api_flask/
+api_python-residencia/
 │
 ├── app/
 │   ├── __init__.py
@@ -29,3 +29,12 @@ api_flask/
 | `requirements.txt`   | Lista os pacotes Python necessários                                               |
 | `README.md`          | Descrição do projeto, como rodar e como usar.                                     |
 | `.gitignore`         | Contem os Arquivos que não devem ir para o Repositório Remoto                     |
+
+## 🌐 Endpoints para Equipe de Front-end: 
+| Método | Endpoint        | Descrição                    |
+| ------ | --------------- | ---------------------------- |
+| GET    | `/saudacao`     | Mensagem de boas-vindas      |
+| POST   | `/usuarios`     | Cadastrar novo usuário       |
+| GET    | `/usuarios`     | Listar todos os usuários     |
+| PUT    | `/usuarios/:id` | Atualizar um usuário pelo ID |
+| DELETE | `/usuarios/:id` | Deletar um usuário pelo ID   |
