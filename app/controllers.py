@@ -13,3 +13,11 @@ def listar_usuarios():
 def deletar_usuario(id):
     global usuarios
     usuarios = [usuario for usuario in usuarios if usuario.id != id]
+
+def atualizar_usuario(id, nome, email):
+    for usuario in usuarios:
+        if usuario.id == id:
+            usuario.nome = nome
+            usuario.email = email
+            return usuario
+    return None
