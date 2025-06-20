@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>API COM PYTHON</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes backgroundAnimationVariable {
+    0% {
+        background-color: #ff7f50; /* Coral */
+    }
+    25% {
+        background-color: #ff6347; /* Tomato */
+    }
+    50% {
+        background-color: #ff4500; /* OrangeRed */
+    }
+    75% {
+        background-color: #ff8c00; /* DarkOrange */
+    }
+    100% {
+        background-color: #ffa500; /* Orange */
+    }
+}
+
+@keyframes colorAnimationVariable {
+    0% {
+        color: rgb(0, 0, 255); /* Blue */
+    }
+    10% {
+        color: rgb(0, 255, 255); /* Cyan */
+    }
+    20% {
+        color: rgb(0, 255, 0); /* Green */
+    }
+    30% {
+        color: rgb(127, 255, 0); /* Chartreuse */
+    }
+    40% {
+        color: rgb(255, 255, 0); /* Yellow */
+    }
+    50% {
+        color: rgb(255, 127, 0); /* Orange */
+    }
+    60% {
+        color: rgb(255, 0, 0); /* Red */
+    }
+    70% {
+        color: rgb(255, 0, 127); /* Rose */
+    }
+    80% {
+        color: rgb(255, 0, 255); /* Magenta */
+    }
+    90% {
+        color: rgb(127, 0, 255); /* Violet */
+    }
+    100% {
+        color: rgb(0, 0, 255); /* Blue */
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(45deg, #000 25%, #111 50%, #000 75%);
+        background-size: 200% 100%;
+        background-position: 0% 0%;
+    }
+    100% {
+        background: linear-gradient(45deg, #000 25%, #111 50%, #000 75%);
+        background-size: 200% 100%;
+        background-position: 100% 0%;
+    }
+    
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    animation: backgroundAnimation 3s infinite alternate;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+#instagram-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    animation: colorAnimationVariable 3s infinite alternate;
+}
+
+#btn-git {
+    padding: 5px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: backgroundAnimationVariable 3s infinite alternate;
+    transition: all 0.2s ease-in-out;
+}
+
+#btn-git:hover {
+    background-color: #0056b3;
+    transform: scale3d(1.25, 1.2, 1.2);
+    animation: backgroundAnimationVariable 0.1s infinite alternate;
+}
+
+</style>
+<body>
+    <section>
+    <h1>API para Atividade</h1>
+    <p>by <a id="instagram-link" href="https://instagram.com/douglasteyh/" target="_blank">@douglasteyh</a></p>
+    <a href="https://github.com/DouglasTeyh/api-python-residencia.git" target="_blank"><button id="btn-git">VER DOCUMENTAÇÃO</button></a>
+    </section>
+</body>
+</html>

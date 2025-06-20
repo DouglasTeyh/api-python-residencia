@@ -1,10 +1,11 @@
 from flask import request, jsonify
 from app import app
 from app.controllers import adicionar_usuario, listar_usuarios, deletar_usuario, atualizar_usuario
+from flask import render_template
 
 @app.route('/')
 def index():
-    return '''<span>Bem-vindo à API de Gerenciamento de Usuários!</span>'''
+    return render_template('index.html')
 
 # rota saudacao
 @app.route('/saudacao', methods=['GET'])
