@@ -1,4 +1,4 @@
-````markdown
+
 # 📄 Documentação - API com Python (Flask) - Residencia (ATIVIDADE)
 
 ## 🗂️ Organização:
@@ -16,7 +16,7 @@ api_python-residencia/
 ├── README.md
 ├── requirements.txt
 └── run.py
-````
+```
 
 ## Descrição dos Arquivos:
 
