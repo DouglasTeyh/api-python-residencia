@@ -21,7 +21,8 @@ api_flask/
 | -------------------- | --------------------------------------------------------------------------------- |
 | `run.py`             | Ponto de entrada da aplicação Flask.                                              |
 | `app/__init__.py`    | Cria e configura a instância do Flask App.                                        |
-| `app/data.py`        | Simula um banco de dados em memória pra listar os usuarios.                        |
+| `app/controllers.py` | Contém as funções responsáveis pelas operações feitas do CRUD.                    |
+| `app/data.py`        | Simula um banco de dados em memória pra listar os usuarios.                       |
 | `requirements.txt`   | Lista os pacotes Python necessários                                               |
 | `README.md`          | Descrição do projeto, como rodar e como usar.                                     |
 | `.gitignore`         | Contem os Arquivos que não devem ir para o Repositório Remoto                     |
