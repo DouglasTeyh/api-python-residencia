@@ -6,10 +6,13 @@ api_flask/
 │
 ├── app/
 │   ├── __init__.py
+    ├── controllers.py
+    ├── data.py
+    ├── models.py
 │
 ├── .gitignore
-├── requirements.txt
 ├── README.md
+├── requirements.txt
 └── run.py
 ```
 
