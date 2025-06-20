@@ -9,3 +9,7 @@ def adicionar_usuario(nome, email):
 
 def listar_usuarios():
     return [usuario.to_dict() for usuario in usuarios]
+
+def deletar_usuario(id):
+    global usuarios
+    usuarios = [usuario for usuario in usuarios if usuario.id != id]
