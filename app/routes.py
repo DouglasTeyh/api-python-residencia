@@ -25,13 +25,13 @@ def obter_usuarios():
 
 #rota para deletar um usuário
 @app.route('/usuarios/<int:id>', methods=['DELETE'])
-def deletar_usuario(id):
+def deletar(id):
     deletar_usuario(id)
     return jsonify({"mensagem": "Usuário deletado com sucesso"})
 
 #rota para atualizar um usuário
 @app.route('/usuarios/<int:id>', methods=['PUT'])
-def atualizar_usuario(id):
+def atualizar(id):
     dados = request.get_json()
     nome = dados.get('nome')
     email = dados.get('email')
