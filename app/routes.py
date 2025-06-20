@@ -2,6 +2,10 @@ from flask import request, jsonify
 from app import app
 from app.controllers import adicionar_usuario, listar_usuarios, deletar_usuario, atualizar_usuario
 
+@app.route('/')
+def index():
+    return '''<span>Bem-vindo à API de Gerenciamento de Usuários!</span>'''
+
 # rota saudacao
 @app.route('/saudacao', methods=['GET'])
 def saudacao():
