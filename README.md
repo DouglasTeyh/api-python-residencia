@@ -163,5 +163,6 @@ Deleta um usuário pelo ID.
 * Todos os dados devem ser enviados em formato JSON.
 * Funciona localmente na porta `5000` e também na URL pública do Render.
 
-```
+```bash
+Deixa uma Estrelinha no Repositório se essa API ficou boa... 🥹👐⭐
 ```
