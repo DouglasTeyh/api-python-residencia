@@ -10,7 +10,7 @@ def index():
 # rota saudacao
 @app.route('/saudacao', methods=['GET'])
 def saudacao():
-    return jsonify({"mensagem": "Seja bem-vindo ao sistema de gerenciamento de usuários!"})
+    return jsonify({"mensagem": "Bem-vindo à API de exemplo."})
 
 # Rota para adicionar um usuário
 @app.route('/usuarios', methods=['POST'])
