@@ -2,6 +2,10 @@ from app.models import Usuario
 from app.data import usuarios
 
 def adicionar_usuario(nome, email):
+    for usuario in usuarios:
+        if usuario.email == email:
+            return None
+    
     novo_id = len(usuarios) + 1
     novo_usuario = Usuario(novo_id, nome, email)
     usuarios.append(novo_usuario)
