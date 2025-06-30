@@ -28,9 +28,10 @@ def deletar_usuario(usuario_id):
         return False
 
 def atualizar_usuario(usuario_id, nome, email):
-    # Verifica se o email já existe em outro usuário
+    # Verifica se o email já existe em outro usuário diferente do atual
     if any(u.email == email and u.id != usuario_id for u in usuarios):
         return None
+
     for usuario in usuarios:
         if usuario.id == usuario_id:
             usuario.nome = nome

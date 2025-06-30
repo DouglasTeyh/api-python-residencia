@@ -4,7 +4,7 @@ ids_existentes = set()
 
 def gerar_id() -> int:
     while True:
-        novo_id = random.randint(100_000, 999_999_999)
+        novo_id = random.randint(1_000, 9_999)
         if novo_id not in ids_existentes:
             ids_existentes.add(novo_id)
             return novo_id
