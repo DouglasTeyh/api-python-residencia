@@ -2,7 +2,6 @@ from app.models import Usuario
 from app.data import usuarios, salvar_usuarios
 
 def adicionar_usuario(nome, email):
-    # Evita emails duplicados
     if any(u.email == email for u in usuarios):
         return None
     novo_usuario = Usuario(nome=nome, email=email)
@@ -28,7 +27,6 @@ def deletar_usuario(usuario_id):
         return False
 
 def atualizar_usuario(usuario_id, nome, email):
-    # Verifica se o email já existe em outro usuário diferente do atual
     if any(u.email == email and u.id != usuario_id for u in usuarios):
         return None
 

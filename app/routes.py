@@ -56,6 +56,6 @@ def atualizar(usuario_id):
 
     usuario = atualizar_usuario(usuario_id, nome, email)
     if usuario is None:
-        return jsonify({"erro": "Email já cadastrado ou usuário não encontrado"}), 400
+        return jsonify({"erro": "Email já cadastrado"}), 400
 
     return jsonify(usuario.to_dict())
