@@ -31,6 +31,10 @@ def deletar_usuario(usuario_id):
 
 def atualizar_usuario(usuario_id, nome, email):
     for usuario in usuarios:
+        if usuario.email == email:
+            return None
+        
+    for usuario in usuarios:
         if usuario.id == usuario_id:
             usuario.nome = nome
             usuario.email = email
