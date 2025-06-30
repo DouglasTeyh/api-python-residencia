@@ -1,34 +1,33 @@
-from flask import request, jsonify
+from flask import request, jsonify, render_template
 from app import app
 from app.controllers import adicionar_usuario, listar_usuarios, deletar_usuario, atualizar_usuario
-from flask import render_template
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# rota saudacao
 @app.route('/saudacao', methods=['GET'])
 def saudacao():
     return jsonify({"mensagem": "Bem-vindo à API de exemplo."})
 
-# Rota para adicionar um usuário
 @app.route('/usuarios', methods=['POST'])
 def criar_usuario():
     dados = request.get_json()
     nome = dados.get('nome')
     email = dados.get('email')
-    if not nome or not email:
-        return jsonify({"erro": "Nome e email são obrigatórios"}), 400
-    usuario = adicionar_usuario(nome, email)
-    return jsonify(usuario.to_dict()), 201
 
-# rota para listar usuários
+    if not nome or not email:
+        return jsonify({'erro': 'Nome e email são obrigatórios'}), 400
+
+    novo_usuario = adicionar_usuario(nome, email)
+    if novo_usuario is None:
+        return jsonify({'erro': 'Email já cadastrado'}), 400
+    return jsonify(novo_usuario.to_dict()), 201
+
 @app.route('/usuarios', methods=['GET'])
 def obter_usuarios():
     return jsonify(listar_usuarios())
 
-# rota para deletar um usuário
 @app.route('/usuarios/<int:usuario_id>', methods=['DELETE'])
 def deletar(usuario_id):
     sucesso = deletar_usuario(usuario_id)
@@ -37,7 +36,6 @@ def deletar(usuario_id):
     else:
         return jsonify({"erro": "Usuário não encontrado"}), 404
 
-# rota para atualizar um usuário
 @app.route('/usuarios/<int:usuario_id>', methods=['PUT'])
 def atualizar(usuario_id):
     dados = request.get_json()
@@ -48,7 +46,7 @@ def atualizar(usuario_id):
         return jsonify({"erro": "Nome e email são obrigatórios"}), 400
 
     usuario = atualizar_usuario(usuario_id, nome, email)
-    if usuario:
-        return jsonify(usuario.to_dict())
-    else:
-        return jsonify({"erro": "Usuário não encontrado"}), 404
+    if usuario is None:
+        return jsonify({"erro": "Email já cadastrado ou usuário não encontrado"}), 400
+
+    return jsonify(usuario.to_dict())

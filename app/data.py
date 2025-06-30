@@ -1,16 +1,27 @@
 import json
 import os
-from app.models import Usuario
+from app.models import Usuario, ids_existentes
 
-CAMINHO_JSON = 'app/usuarios.json'
+CAMINHO_JSON = os.path.join(os.path.dirname(__file__), 'usuarios.json')
 usuarios = []
 
 def carregar_usuarios():
     global usuarios
     if os.path.exists(CAMINHO_JSON):
-        with open(CAMINHO_JSON, 'r', encoding='utf-8') as f:
-            dados = json.load(f)
-            usuarios = [Usuario(d['id'], d['nome'], d['email']) for d in dados]
+        try:
+            with open(CAMINHO_JSON, 'r', encoding='utf-8') as f:
+                conteudo = f.read().strip()
+                if conteudo:
+                    dados = json.loads(conteudo)
+                    usuarios = [Usuario(d['id'], d['nome'], d['email']) for d in dados]
+                    ids_existentes.clear()
+                    for u in usuarios:
+                        ids_existentes.add(u.id)
+                else:
+                    usuarios = []
+        except json.JSONDecodeError as e:
+            print(f"Erro ao carregar JSON: {e}")
+            usuarios = []
     else:
         usuarios = []
 
