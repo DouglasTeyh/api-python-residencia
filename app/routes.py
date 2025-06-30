@@ -28,6 +28,15 @@ def criar_usuario():
 def obter_usuarios():
     return jsonify(listar_usuarios())
 
+@app.route('/usuarios/<int:usuario_id>', methods=['GET'])
+def obter_usuario_por_id(usuario_id):
+    from app.data import usuarios
+    usuario = next((u for u in usuarios if u.id == usuario_id), None)
+    if usuario:
+        return jsonify(usuario.to_dict())
+    return jsonify({"erro": "Usuário não encontrado"}), 404
+
+
 @app.route('/usuarios/<int:usuario_id>', methods=['DELETE'])
 def deletar(usuario_id):
     sucesso = deletar_usuario(usuario_id)
